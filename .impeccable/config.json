@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-18T17:26:37.383Z",
+        "reason": "Claude tasarim karari: sayfanin temel tipografik cihazi, metnin ince bir cizginin altina yanasik oturmasi (border-top + 0 yan dolgu). Kenarlik bir kutu kenari degil, satir ayiraci; yan dolgu eklemek butun sutun hizasini bozar. Sub-8px dolgu birakan tek yer olan link border-bottom'i kaldirildi, yerine text-decoration kondu."
+      }
+    ]
+  }
+}
