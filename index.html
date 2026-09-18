@@ -50,8 +50,14 @@
     margin:0 auto;
     padding:0 clamp(1.25rem,5vw,3rem);
   }
-  a{color:var(--mark);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px}
-  a:hover{border-bottom-color:currentColor}
+  a{
+    color:var(--mark);
+    text-decoration:underline;
+    text-decoration-color:var(--rule);
+    text-decoration-thickness:1px;
+    text-underline-offset:.22em;
+  }
+  a:hover{text-decoration-color:currentColor}
   a:focus-visible{outline:2px solid var(--mark);outline-offset:3px;border-radius:2px}
 
   /* ---- ruled sheet ------------------------------------------------ */
