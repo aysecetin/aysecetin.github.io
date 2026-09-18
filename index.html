@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayşe Çetin</title>
+<meta name="description" content="Ayşe Çetin — Yönetim Bilişim Sistemleri mezunu. Sahada, telefonda, zor koşulda kullanılan ürünler geliştiriyor: SürüTakip, DisasterAI, Daily Brew, Color Gates.">
+<meta property="og:title" content="Ayşe Çetin">
+<meta property="og:description" content="Masa başında olmayan insanlar için yazılım. SürüTakip, DisasterAI, Daily Brew, Color Gates.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:opsz,wght@6..72,300..600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E9EBE4'/%3E%3Cpath d='M4 22 L11 12 L17 19 L22 9 L28 22' fill='none' stroke='%2317241D' stroke-width='2.2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --paper:#E9EBE4;
+    --ink:#17241D;
+    --ink-2:#4E5E53;
+    --rule:#C3CBBC;
+    --rule-soft:#D6DCD0;
+    --mark:#1D3FAE;
+    --measure:56ch;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#131A16;
+      --ink:#E5E9E0;
+      --ink-2:#9AA89B;
+      --rule:#2E3C33;
+      --rule-soft:#232E28;
+      --mark:#9CB4F7;
+    }
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif;
+    font-size:17px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{
+    max-width:60rem;
+    margin:0 auto;
+    padding:0 clamp(1.25rem,5vw,3rem);
+  }
+  a{color:var(--mark);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+  a:hover{background:var(--mark);color:var(--paper);border-color:transparent}
+  a:focus-visible{outline:2px solid var(--mark);outline-offset:3px;border-radius:2px}
+
+  /* ---- ruled sheet ------------------------------------------------ */
+  .rule{
+    height:1px;
+    background:var(--rule);
+    border:0;
+    margin:0;
+    transform-origin:left center;
+  }
+  .rule--heavy{height:2px;background:var(--ink)}
+
+  /* ---- masthead --------------------------------------------------- */
+  header.sheet{padding-top:clamp(1.5rem,4vw,2.5rem)}
+  .masthead{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:.5rem 1.5rem;
+    padding-bottom:.6rem;
+  }
+  .masthead .name{
+    font-family:"Newsreader",Georgia,serif;
+    font-size:1.3rem;
+    font-weight:500;
+    letter-spacing:.005em;
+  }
+  .masthead nav{
+    font-size:.9rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.1rem;
+    color:var(--ink-2);
+  }
+
+  /* ---- hero ------------------------------------------------------- */
+  .hero{padding:clamp(3rem,10vw,6.5rem) 0 clamp(2.5rem,7vw,4.5rem)}
+  .hero h1{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:300;
+    font-size:clamp(2.35rem,6.4vw,4.35rem);
+    line-height:1.08;
+    letter-spacing:-.018em;
+    margin:0 0 1.6rem;
+    max-width:17ch;
+  }
+  .hero p{
+    margin:0 0 1.15rem;
+    max-width:var(--measure);
+  }
+  .hero p:last-child{margin-bottom:0}
+  .hero .lede{font-size:1.14rem}
+
+  /* ---- sections --------------------------------------------------- */
+  section{padding:clamp(2.75rem,7vw,4.5rem) 0 0}
+  h2{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:400;
+    font-size:1.65rem;
+    letter-spacing:-.01em;
+    margin:0 0 .5rem;
+  }
+  .section-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:.35rem 1.5rem;
+  }
+  .section-note{color:var(--ink-2);font-size:.9rem;max-width:42ch}
+
+  /* ---- field record ----------------------------------------------- */
+  .record{padding:clamp(1.75rem,4vw,2.5rem) 0 0}
+  .record + .record{border-top:1px solid var(--rule-soft);margin-top:clamp(1.75rem,4vw,2.5rem)}
+  .record-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:.3rem 1.5rem;
+    margin-bottom:.15rem;
+  }
+  .record-head h3{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:500;
+    font-size:1.5rem;
+    letter-spacing:-.012em;
+    margin:0;
+  }
+  .kind{color:var(--ink-2);font-size:.9rem}
+  .record dl{
+    display:grid;
+    grid-template-columns:10.5rem minmax(0,1fr);
+    gap:0;
+    margin:1rem 0 0;
+  }
+  .record dt{
+    color:var(--ink-2);
+    font-size:.88rem;
+    line-height:1.5;
+    padding:.6rem 1rem .6rem 0;
+    border-top:1px solid var(--rule-soft);
+  }
+  .record dd{
+    margin:0;
+    padding:.55rem 0;
+    border-top:1px solid var(--rule-soft);
+    max-width:var(--measure);
+  }
+  .record dt:first-of-type,.record dd:first-of-type{border-top:0;padding-top:0}
+  .stack{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    margin:1rem 0 0;
+    font-size:.88rem;
+    color:var(--ink-2);
+    line-height:1.7;
+  }
+  .stack span{white-space:nowrap}
+  .stack span::after{content:"/";color:var(--rule);margin:0 .5rem}
+  .stack span:last-child::after{content:""}
+
+  /* ---- experience / education ------------------------------------- */
+  .entry{padding:1.5rem 0 0}
+  .entry + .entry{border-top:1px solid var(--rule-soft);margin-top:1.5rem}
+  .entry-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:.2rem 1.5rem;
+  }
+  .entry-head h3{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:500;
+    font-size:1.24rem;
+    margin:0;
+  }
+  .when{color:var(--ink-2);font-size:.9rem;white-space:nowrap}
+  .role{color:var(--ink-2);font-size:.95rem;margin:.1rem 0 .7rem}
+  .entry ul{margin:0;padding-left:1.1rem;max-width:var(--measure)}
+  .entry li{margin-bottom:.45rem}
+  .entry li::marker{color:var(--rule)}
+
+  /* ---- skills ------------------------------------------------------ */
+  .skills{
+    display:grid;
+    grid-template-columns:10.5rem minmax(0,1fr);
+    margin:1.25rem 0 0;
+  }
+  .skills dt{
+    color:var(--ink-2);
+    font-size:.88rem;
+    padding:.6rem 1rem .6rem 0;
+    border-top:1px solid var(--rule-soft);
+  }
+  .skills dd{
+    margin:0;
+    padding:.55rem 0;
+    border-top:1px solid var(--rule-soft);
+    max-width:var(--measure);
+  }
+  .skills dt:first-of-type,.skills dd:first-of-type{border-top:0;padding-top:0}
+
+  /* ---- contact ----------------------------------------------------- */
+  .contact{padding-bottom:clamp(3.5rem,9vw,6rem)}
+  .contact p{max-width:var(--measure)}
+  .contact ul{list-style:none;margin:1.25rem 0 0;padding:0;font-size:1.05rem}
+  .contact li{padding:.5rem 0;border-top:1px solid var(--rule-soft)}
+  .contact li:first-child{border-top:0;padding-top:0}
+  footer{
+    padding:1.25rem 0 3rem;
+    color:var(--ink-2);
+    font-size:.85rem;
+  }
+
+  /* ---- one page-load moment: the sheet rules itself ---------------- */
+  @media (prefers-reduced-motion: no-preference){
+    .rule{animation:draw .7s cubic-bezier(.2,.7,.3,1) both}
+    .rule--2{animation-delay:.09s}
+    .rule--3{animation-delay:.18s}
+    @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  }
+
+  @media (max-width:640px){
+    body{font-size:16.5px}
+    .record dl,.skills{grid-template-columns:1fr}
+    .record dt,.skills dt{padding:.7rem 0 0;border-top:1px solid var(--rule-soft)}
+    .record dd,.skills dd{padding:.1rem 0 .7rem;border-top:0}
+    .record dd:first-of-type{padding-top:.1rem}
+    .record dt:first-of-type{padding-top:0}
+  }
+
+  @media print{
+    :root{--paper:#fff;--ink:#000;--ink-2:#444;--rule:#bbb;--rule-soft:#ddd;--mark:#000}
+    a{border-bottom:0}
+    .record,.entry{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<header class="sheet">
+  <div class="wrap">
+    <div class="masthead">
+      <span class="name">Ayşe Çetin</span>
+      <nav>
+        <a href="#isler">İşler</a>
+        <a href="#deneyim">Deneyim</a>
+        <a href="#bilgi">Ne biliyorum</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+    </div>
+    <hr class="rule rule--heavy">
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="hero">
+      <h1>Masa başında olmayan insanlar için yazılım yazıyorum.</h1>
+      <p class="lede">Yönetim Bilişim Sistemleri mezunuyum — Pamukkale Üniversitesi, 2026. Bir ürüne başlarken önce onu kimin, nerede, hangi koşulda açacağını yazarım: merada tek elle mi, telefonda dört dakikalık bir molada mı, yoksa evinin depreme dayanıp dayanmayacağını merak ederken mi. Aşağıdaki dört iş de o soruyla başladı.</p>
+      <p>Denizli'de yaşıyorum. Ürün tarafında da kod tarafında da çalışıyorum: Django ve FastAPI ile arka uç, React ve React Native ile arayüz, coğrafi veri ve LLM'lerle karar destek.</p>
+    </div>
+
+    <hr class="rule rule--2">
+
+    <section id="isler">
+      <div class="section-head">
+        <h2>İşler</h2>
+        <p class="section-note">Dördünün de ürün kararlarını ve kodunu yazdım. Hangisinde kiminle birlikte çalıştığım aşağıda ayrı ayrı duruyor.</p>
+      </div>
+
+      <article class="record">
+        <div class="record-head">
+          <h3>SürüTakip</h3>
+          <span class="kind">GPS destekli sürü yönetimi platformu</span>
+        </div>
+        <dl>
+          <dt>Kim kullanıyor</dt>
+          <dd>Küçük ve orta ölçekli hayvancılık işletmelerinin sahipleri ve çobanları. İkinci kullanıcı, gelen talepleri karşılayan veterinerler.</dd>
+          <dt>Hangi koşulda</dt>
+          <dd>Ahırda ya da merada, ayakta, tek elle, parlak güneş altında ve zayıf şebekede. Kitlenin çoğu yaşlı ve düzenli uygulama kullanma alışkanlığı yok — arayüzün tamamı bu kabulle tasarlandı: büyük dokunma hedefleri, etiketli düğmeler, gizli jest yok, sade Türkçe.</dd>
+          <dt>Ne yapıyor</dt>
+          <dd>Hayvan kayıtları, canlı konum takibi, haritaya çizilen bölgeden çıkışta alarm ve cihazın GSM üzerinden telefon araması, hareketsizlik ve düşük pil uyarıları, ruhsatlı hayvan pazarı ilanları, il bazlı veteriner eşleştirmesi, abonelik ve ödeme.</dd>
+          <dt>Benim yaptığım</dt>
+          <dd>Django + PostgreSQL web uygulaması ve Expo mobil uygulaması; ESP32 + SIM808 takip cihazının yazılımı ve cihazın her sinyalde sunucudan yeni sinyal aralığını öğrendiği <em>config</em> akışı; ticari kullanıma açık bir karo sağlayıcısına geçiş ve kendi önbellekli harita proxy'miz. Kapsamı ve öncelikleri staj sorumlumla birlikte belirledik.</dd>
+          <dt>Durum</dt>
+          <dd>Render üzerinde canlı. Abonelik satan ticari bir ürün.</dd>
+        </dl>
+        <p class="stack"><span>Django</span><span>PostgreSQL</span><span>Expo / React Native</span><span>TypeScript</span><span>ESP32 + SIM808</span><span>Leaflet</span><span>Render</span></p>
+      </article>
+
+      <article class="record">
+        <div class="record-head">
+          <h3>DisasterAI</h3>
+          <span class="kind">Afet risk analizi — lisans tezi ve TÜBİTAK 2209-A projesi</span>
+        </div>
+        <dl>
+          <dt>Kim kullanıyor</dt>
+          <dd>Teknik olmayan vatandaş. Afet risk haritaları kamuya açık ama okunabilir değil; bu uygulamanın varlık sebebi o veriyi "benim binam ne durumda" sorusuna cevap verecek hâle getirmek.</dd>
+          <dt>Ne yapıyor</dt>
+          <dd>Kullanıcı haritadan bir konum seçip binasının bilgilerini giriyor; uygulama deprem, heyelan ve sel için risk skoru üretiyor, riski harita katmanı olarak gösteriyor, <em>skor neden böyle</em> diye açıklıyor, en yakın toplanma alanına yol ağı üzerinden yürüyüş rotası çiziyor, senaryoları karşılaştırıyor ve PDF rapor veriyor.</dd>
+          <dt>Benim yaptığım</dt>
+          <dd>FastAPI arka uç ve coğrafi katmanların ağırlıklı çakıştırılmasıyla risk skorlaması; bina bilgilerinden hassasiyet hesabı; React + Leaflet arayüz; Gemini destekli analiz asistanı. Proje yürütme tarafında araştırma planı, bütçe işlemleri ve akademik raporlama.</dd>
+          <dt>Durum</dt>
+          <dd>TÜBİTAK 2209-A kabul aldı. Çalışma alanı İzmir Seferihisar. Danışman: Dr. Mehmet Ulaş Koyuncuoğlu, Pamukkale Üniversitesi.</dd>
+        </dl>
+        <p class="stack"><span>Python</span><span>FastAPI</span><span>GeoPandas</span><span>Rasterio</span><span>Shapely</span><span>React</span><span>Vite</span><span>Leaflet</span><span>Gemini 2.5 Flash</span></p>
+      </article>
+
+      <article class="record">
+        <div class="record-head">
+          <h3>Daily Brew</h3>
+          <span class="kind">V60 demleme ve alışkanlık uygulaması</span>
+        </div>
+        <dl>
+          <dt>Kim kullanıyor</dt>
+          <dd>Sabah kahvesini kendi demleyen kişi.</dd>
+          <dt>Hangi koşulda</dt>
+          <dd>Mutfakta, elleri doluyken, demleme süren dört dakika boyunca. Uygulamanın o dört dakikayı bölmemesi gerekiyor — bu yüzden ana ekranda ve demleme sayacında reklam yok, reklam yalnızca rapor ve ayarlar ekranlarının altında.</dd>
+          <dt>Ne yapıyor</dt>
+          <dd>Demleme sayacı, tadım notları, günlük seri takibi ve ayda bir affetme hakkı, rapor ekranı, verilerin JSON olarak dışa aktarılması. Tamamen çevrimdışı çalışıyor ve hiçbir veri toplamıyor.</dd>
+          <dt>Benim yaptığım</dt>
+          <dd>Expo + TypeScript uygulamanın tamamı, yerel SQLite veri katmanı ve göç dosyaları, Skia ile çizim, EAS ile Android derlemeleri. Yayın tarafında gizlilik politikası, Apple'ın uygulama düzeyinde birleştirilmiş gizlilik beyanları ve mağaza hazırlığı.</dd>
+          <dt>Durum</dt>
+          <dd>Android'de kendi APK'sıyla çalışıyor. iOS için TestFlight hazırlığı sürüyor.</dd>
+        </dl>
+        <p class="stack"><span>Expo / React Native</span><span>TypeScript</span><span>SQLite</span><span>Skia</span><span>Reanimated</span><span>EAS Build</span></p>
+      </article>
+
+      <article class="record">
+        <div class="record-head">
+          <h3>Color Gates Puzzle</h3>
+          <span class="kind">Mobil bulmaca oyunu</span>
+        </div>
+        <dl>
+          <dt>Kim kullanıyor</dt>
+          <dd>Telefonda kısa molalarda oynayan kişi. Kaybedilen bir bölüm can yakmamalı, kazanılan bir bölüm bir sonrakini açmalı.</dd>
+          <dt>Ne yapıyor</dt>
+          <dd>Renkli parçalar tahtada kaydırılarak yalnızca kendi renklerindeki kapıdan çıkarılıyor. Bölümler önceden yazılmış bir listeden gelmiyor; istendiği anda üretiliyor ve her biri, oynanmadan önce bir çözücüden geçirilip gerçekten çözülebildiği doğrulanıyor.</dd>
+          <dt>Benim yaptığım</dt>
+          <dd>Bölüm üreteci, çözücü ve doğrulayıcı; zorluk sıralaması ile tahta boyu, parça yoğunluğu ve süre hesabının birbirine bağlanması; can ve ödül ekonomisi, koleksiyon ve lider tablosu; React arayüz ve Capacitor ile Android paketi.</dd>
+          <dt>Durum</dt>
+          <dd>Web sürümü ve Android derlemesi çalışıyor, mağaza hazırlığı sürüyor.</dd>
+        </dl>
+        <p class="stack"><span>TypeScript</span><span>React</span><span>Vite</span><span>Capacitor</span><span>Drizzle</span></p>
+      </article>
+    </section>
+
+    <hr class="rule rule--3" style="margin-top:clamp(2.75rem,7vw,4.5rem)">
+
+    <section id="deneyim">
+      <h2>Deneyim</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Pro Yıldız Yazılım</h3>
+          <span class="when">Temmuz – Ağustos 2026 · Denizli</span>
+        </div>
+        <p class="role">Yazılım stajyeri</p>
+        <ul>
+          <li>Staj sorumlumla kapsamı ve önceliği birlikte kararlaştırdığımız işleri geliştirdim; çıkan her iş gerçek bir müşteri ihtiyacına bağlıydı.</li>
+          <li>Toptan gıda ve temizlik ürünleri satan bir firma için içeriği tamamen admin panelinden yönetilebilen kurumsal site (Django).</li>
+          <li>Güvenlik sistemleri satan bir firma için ürün listeleme, sepet ve sipariş akışı olan e-ticaret sitesi.</li>
+          <li>Sanayideki oto yedek parçacılarını parça arayan müşterilerle buluşturan pazaryeri prototipi. İhtiyaç analizini sanayicilerle görüşerek staj sorumlum yaptı; çıkan ihtiyaçları birlikte değerlendirip prototipi geliştirdim.</li>
+          <li>SürüTakip platformu — yukarıda.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>NewMind AI</h3>
+          <span class="when">Ağustos – Eylül 2025</span>
+        </div>
+        <p class="role">Yapay zekâ stajyeri, LLM ekibi</p>
+        <ul>
+          <li>Dense, BM25 ve hibrit arama senaryolarını karşılaştıran kıyaslama çalışmalarına katkı verdim; sonuçlar RAG tarafındaki arama kalitesini değerlendirmek için kullanıldı.</li>
+          <li>Kıyaslama ve eşzamanlılık testlerini elle çalıştırmak yerine arayüzünden tetiklenebilen, FastAPI tabanlı bir iç araç geliştirdim.</li>
+          <li>Prometheus ve Grafana üzerinde sistem metriklerini izleyen panolar kurup yorumlayarak performans darboğazlarını çıkardım.</li>
+          <li>LLM eğitim ve çıkarım süreçlerini araştırıp ekibin başvurabileceği teknik dokümantasyona dönüştürdüm.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Pamukkale Üniversitesi</h3>
+          <span class="when">2022 – 2026</span>
+        </div>
+        <p class="role">Lisans, Yönetim Bilişim Sistemleri</p>
+        <ul>
+          <li>Bitirme tezi: DisasterAI — yukarıda.</li>
+          <li>Geleneksel meslekleri yaşatmayı hedefleyen bir platform için uçtan uca sistem analizi: kullanıcı ihtiyaçları, iş süreçleri, kullanım senaryosu ve veri akış diyagramları, teknik ve mali fizibilite.</li>
+          <li>Müşteri, satış ve kampanya süreçlerini kapsayan ilişkisel bir CRM veritabanı tasarımı (PostgreSQL).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="bilgi">
+      <h2>Ne biliyorum</h2>
+      <dl class="skills">
+        <dt>Arka uç</dt>
+        <dd>Python, Django, FastAPI, PostgreSQL, PostGIS, SQLite, REST API tasarımı, kimlik doğrulama ve rol yetkilendirme</dd>
+        <dt>Arayüz</dt>
+        <dd>TypeScript, React, React Native (Expo), Vite, Next.js, Tailwind CSS, erişilebilirlik ve çevrimdışı çalışan arayüzler</dd>
+        <dt>Coğrafi veri</dt>
+        <dd>GeoPandas, Shapely, Rasterio, PyProj, Leaflet, OpenStreetMap, ArcGIS, rota ve mesafe hesabı</dd>
+        <dt>Yapay zekâ</dt>
+        <dd>LLM tabanlı sistemler, RAG, arama kıyaslaması (dense / BM25 / hibrit), istem tasarımı, LangChain, Gemini</dd>
+        <dt>Ürün ve analiz</dt>
+        <dd>Kullanıcı ihtiyaç analizi, gereksinim toplama, özellik önceliklendirme, fizibilite, UML ve kullanım senaryosu diyagramları, ER ve veri akış diyagramları</dd>
+        <dt>Donanım</dt>
+        <dd>ESP32, SIM808 ile GSM ve GPS, cihaz–sunucu haberleşmesi</dd>
+        <dt>Diller</dt>
+        <dd>Türkçe (ana dil), İngilizce (B1+ — teknik dokümantasyon takibi ve literatür araştırması)</dd>
+      </dl>
+    </section>
+
+    <section id="iletisim" class="contact">
+      <h2>İletişim</h2>
+      <p>Ürün ve yazılım tarafında çalışabileceğim işlere açığım. Yukarıdaki projelerden birini ayrıntısıyla konuşmak isterseniz yazın, memnuniyetle anlatırım.</p>
+      <ul>
+        <li><a href="mailto:aysecetiw@gmail.com">aysecetiw@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/ayseecetin/">linkedin.com/in/ayseecetin</a></li>
+        <li><a href="https://github.com/aysecetin">github.com/aysecetin</a></li>
+        <li>Denizli, Türkiye</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <hr class="rule" style="margin-bottom:1rem">
+    Ayşe Çetin, 2026
+  </div>
+</footer>
+
+</body>
+</html>
