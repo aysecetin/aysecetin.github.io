@@ -1,540 +1,212 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ayşe Çetin</title>
-<meta name="description" content="Ayşe Çetin — yazılım geliştirici. Sistem tasarımından arka uca, arayüzden donanıma, sunucudan bakıma: SürüTakip, DisasterAI, Daily Brew, Color Gates.">
-<meta property="og:title" content="Ayşe Çetin">
-<meta property="og:description" content="Şemadan sunucuya, ürünün tamamını yazan bir yazılım geliştirici. SürüTakip, DisasterAI, Daily Brew, Color Gates.">
-<meta property="og:type" content="profile">
+<title>Ayşe Çetin — Mobile apps &amp; games</title>
+<meta name="description" content="Portfolio of Ayşe Çetin: Daily Brew, Color Gates Puzzle and its playable ad, internships and earlier projects.">
+<meta property="og:title" content="Ayşe Çetin — Mobile apps &amp; games">
+<meta property="og:description" content="Portfolio of Ayşe Çetin: Daily Brew, Color Gates Puzzle and its playable ad, internships and earlier projects.">
+<link rel="icon" href="assets/cg-icon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:opsz,wght@6..72,300..600&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E9EBE4'/%3E%3Cpath d='M4 22 L11 12 L17 19 L22 9 L28 22' fill='none' stroke='%2317241D' stroke-width='2.2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
-<style>
-  :root{
-    --paper:#E9EBE4;
-    --ink:#17241D;
-    --ink-2:#4E5E53;
-    --rule:#C3CBBC;
-    --rule-soft:#D6DCD0;
-    --mark:#1D3FAE;
-    --measure:56ch;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --paper:#131A16;
-      --ink:#E5E9E0;
-      --ink-2:#9AA89B;
-      --rule:#2E3C33;
-      --rule-soft:#232E28;
-      --mark:#9CB4F7;
-    }
-  }
-
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif;
-    font-size:17px;
-    line-height:1.62;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-  .wrap{
-    max-width:60rem;
-    margin:0 auto;
-    padding:0 clamp(1.25rem,5vw,3rem);
-  }
-  a{
-    color:var(--mark);
-    text-decoration:underline;
-    text-decoration-color:var(--rule);
-    text-decoration-thickness:1px;
-    text-underline-offset:.22em;
-  }
-  a:hover{text-decoration-color:currentColor}
-  a:focus-visible{outline:2px solid var(--mark);outline-offset:3px;border-radius:2px}
-
-  /* ---- ruled sheet ------------------------------------------------ */
-  .rule{
-    height:1px;
-    background:var(--rule);
-    border:0;
-    margin:0;
-    transform-origin:left center;
-  }
-  .rule--heavy{height:2px;background:var(--ink)}
-
-  /* ---- masthead --------------------------------------------------- */
-  header.sheet{padding-top:clamp(1.5rem,4vw,2.5rem)}
-  .masthead{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:.5rem 1.5rem;
-    padding-bottom:.6rem;
-  }
-  .masthead .name{
-    font-family:"Newsreader",Georgia,serif;
-    font-size:1.3rem;
-    font-weight:500;
-    letter-spacing:.005em;
-  }
-  .masthead nav{
-    font-size:.9rem;
-    display:flex;
-    flex-wrap:wrap;
-    gap:1.1rem;
-    color:var(--ink-2);
-  }
-
-  /* ---- hero ------------------------------------------------------- */
-  .hero{padding:clamp(3rem,10vw,6.5rem) 0 clamp(2.5rem,7vw,4.5rem)}
-  .hero h1{
-    font-family:"Newsreader",Georgia,serif;
-    font-weight:300;
-    font-size:clamp(2.35rem,6.4vw,4.35rem);
-    line-height:1.08;
-    letter-spacing:-.018em;
-    margin:0 0 1.6rem;
-    max-width:19ch;
-  }
-  .hero p{
-    margin:0 0 1.15rem;
-    max-width:var(--measure);
-  }
-  .hero p:last-child{margin-bottom:0}
-  .hero .lede{font-size:1.14rem}
-
-  /* ---- the chain: a scale bar across the stages I own ------------- */
-  .chain{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    column-gap:clamp(1.25rem,3vw,2.25rem);
-    row-gap:clamp(1.75rem,4vw,2.5rem);
-    margin-top:clamp(1.5rem,3.5vw,2.25rem);
-  }
-  .stage{
-    border-top:2px solid var(--ink);
-    padding-top:1.1rem;
-    position:relative;
-  }
-  .stage::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:-2px;
-    width:1px;
-    height:.7rem;
-    background:var(--ink);
-  }
-  .stage h3{
-    font-family:"Newsreader",Georgia,serif;
-    font-weight:500;
-    font-size:1.12rem;
-    letter-spacing:-.008em;
-    margin:0 0 .4rem;
-  }
-  .stage p{
-    margin:0;
-    font-size:.9rem;
-    line-height:1.58;
-    color:var(--ink-2);
-  }
-
-  /* ---- sections --------------------------------------------------- */
-  section{padding:clamp(2.75rem,7vw,4.5rem) 0 0}
-  h2{
-    font-family:"Newsreader",Georgia,serif;
-    font-weight:400;
-    font-size:1.65rem;
-    letter-spacing:-.01em;
-    margin:0 0 .5rem;
-  }
-  .section-head{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:.35rem 1.5rem;
-  }
-  .section-note{color:var(--ink-2);font-size:.9rem;max-width:42ch}
-
-  /* ---- field record ----------------------------------------------- */
-  .record{padding:clamp(1.75rem,4vw,2.5rem) 0 0}
-  .record + .record{border-top:1px solid var(--rule-soft);margin-top:clamp(1.75rem,4vw,2.5rem)}
-  .record-head{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:.3rem 1.5rem;
-    margin-bottom:.15rem;
-  }
-  .record-head h3{
-    font-family:"Newsreader",Georgia,serif;
-    font-weight:500;
-    font-size:1.5rem;
-    letter-spacing:-.012em;
-    margin:0;
-  }
-  .kind{color:var(--ink-2);font-size:.9rem}
-  .record dl{
-    display:grid;
-    grid-template-columns:10.5rem minmax(0,1fr);
-    gap:0;
-    margin:1rem 0 0;
-  }
-  .record dt{
-    color:var(--ink-2);
-    font-size:.88rem;
-    line-height:1.5;
-    padding:.6rem 1rem .6rem 0;
-    border-top:1px solid var(--rule-soft);
-  }
-  .record dd{
-    margin:0;
-    padding:.55rem 0;
-    border-top:1px solid var(--rule-soft);
-    max-width:var(--measure);
-  }
-  .record dt:first-of-type,.record dd:first-of-type{border-top:0;padding-top:0}
-  .stack{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    margin:1rem 0 0;
-    font-size:.88rem;
-    color:var(--ink-2);
-    line-height:1.7;
-  }
-  .stack span{white-space:nowrap}
-  .stack span::after{content:"/";color:var(--rule);margin:0 .5rem}
-  .stack span:last-child::after{content:""}
-
-  /* ---- experience / education ------------------------------------- */
-  .entry{padding:1.5rem 0 0}
-  .entry + .entry{border-top:1px solid var(--rule-soft);margin-top:1.5rem}
-  .entry-head{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:.2rem 1.5rem;
-  }
-  .entry-head h3{
-    font-family:"Newsreader",Georgia,serif;
-    font-weight:500;
-    font-size:1.24rem;
-    margin:0;
-  }
-  .when{color:var(--ink-2);font-size:.9rem;white-space:nowrap}
-  .role{color:var(--ink-2);font-size:.95rem;margin:.1rem 0 .7rem}
-  .entry ul{margin:0;padding-left:1.1rem;max-width:var(--measure)}
-  .entry li{margin-bottom:.45rem}
-  .entry li::marker{color:var(--rule)}
-
-  /* ---- skills ------------------------------------------------------ */
-  .skills{
-    display:grid;
-    grid-template-columns:10.5rem minmax(0,1fr);
-    margin:1.25rem 0 0;
-  }
-  .skills dt{
-    color:var(--ink-2);
-    font-size:.88rem;
-    padding:.6rem 1rem .6rem 0;
-    border-top:1px solid var(--rule-soft);
-  }
-  .skills dd{
-    margin:0;
-    padding:.55rem 0;
-    border-top:1px solid var(--rule-soft);
-    max-width:var(--measure);
-  }
-  .skills dt:first-of-type,.skills dd:first-of-type{border-top:0;padding-top:0}
-
-  /* ---- contact ----------------------------------------------------- */
-  .contact{padding-bottom:clamp(3.5rem,9vw,6rem)}
-  .contact p{max-width:var(--measure)}
-  .contact ul{list-style:none;margin:1.25rem 0 0;padding:0;font-size:1.05rem}
-  .contact li{padding:.7rem 0;border-top:1px solid var(--rule-soft)}
-  .contact li:first-child{border-top:0;padding-top:0}
-  footer{
-    padding:1.25rem 0 3rem;
-    color:var(--ink-2);
-    font-size:.85rem;
-  }
-
-  /* ---- one page-load moment: the sheet rules itself ---------------- */
-  @media (prefers-reduced-motion: no-preference){
-    .rule{animation:draw .7s cubic-bezier(.2,.7,.3,1) both}
-    .rule--2{animation-delay:.09s}
-    .rule--3{animation-delay:.18s}
-    @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-  }
-
-  @media (max-width:820px){
-    .chain{grid-template-columns:repeat(2,1fr)}
-  }
-
-  @media (max-width:640px){
-    body{font-size:16.5px}
-    .chain{grid-template-columns:1fr;row-gap:1.4rem}
-    .record dl,.skills{grid-template-columns:1fr}
-    .record dt,.skills dt{padding:.7rem 0 0;border-top:1px solid var(--rule-soft)}
-    .record dd,.skills dd{padding:.1rem 0 .7rem;border-top:0}
-    .record dd:first-of-type{padding-top:.1rem}
-    .record dt:first-of-type{padding-top:0}
-  }
-
-  @media print{
-    :root{--paper:#fff;--ink:#000;--ink-2:#444;--rule:#bbb;--rule-soft:#ddd;--mark:#000}
-    a{border-bottom:0}
-    .record,.entry{break-inside:avoid}
-  }
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>:root{--ink:#3B2B21;--ink2:#56453A;--ink3:#7B6555;--cream:#FAF2E6;--line:#EDDFCB;--brown:#A35F3C;--purple:#7E57B5;--serif:'Fraunces',Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif}
+a{color:inherit}a:hover{opacity:.85}
+img{max-width:100%}
+h1,h2,h3,h4,p{margin:0}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--cream);padding:8px 14px;border-radius:8px;z-index:20}
+.skip:focus{left:8px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:32px;padding-right:32px}
+@media (max-width:600px){.wrap{padding-left:20px;padding-right:20px}}
+.top{position:sticky;top:0;z-index:10;background:var(--cream);border-bottom:1px solid var(--line)}
+.nav{padding-top:18px;padding-bottom:18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+.brand{font-family:var(--serif);font-weight:600;font-size:20px;text-decoration:none}
+.nav-r{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;font-size:15px;font-weight:500}
+.nav-r>a{text-decoration:none;color:#4A3A2F}
+.lang{display:flex;gap:2px;padding:3px;border-radius:999px;border:1px solid #E0CDB4;background:#FFF8EE}
+.lang button{min-width:44px;min-height:36px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:#4A3A2F;font:inherit;font-size:13px;font-weight:600;letter-spacing:.06em;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--cream)}
+.btn-dark{padding:10px 18px;border-radius:999px;background:var(--ink);color:var(--cream)!important;text-decoration:none}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.kicker.brown{color:var(--brown)}.kicker.purple{color:var(--purple)}.kicker.peach{color:#E39A6E}
+.lead{max-width:640px;font-size:20px;line-height:1.55;color:var(--ink2)}
+.hero{padding-top:104px;padding-bottom:96px;display:flex;flex-direction:column;gap:56px}
+.hero-text{display:flex;flex-direction:column;gap:28px;max-width:920px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6.4vw,84px);line-height:1.02;letter-spacing:-.02em}
+.hero-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px}
+.pcard{text-decoration:none;display:flex;align-items:center;gap:22px;padding:24px 28px;border-radius:28px}
+.pcard img{width:72px;height:72px;border-radius:18px;flex-shrink:0}
+.pcard>div{display:flex;flex-direction:column;gap:4px;flex-grow:1}
+.pc-t{font-family:var(--serif);font-weight:600;font-size:26px}
+.pc-s{font-size:15px}
+.pc-a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;flex-shrink:0}
+.pcard.db{background:#F5E2CB;color:#3E2D23}.pcard.db .pc-s{color:#5C4636}.pcard.db .pc-a{background:#3E2D23;color:#F3EBDF}
+.pcard.cg{background:#F3E8EE;color:#4A3466}.pcard.cg .pc-s{color:#6B5288}.pcard.cg .pc-a{background:var(--purple);color:#fff}
+.sec{border-top:1px solid var(--line)}
+.sec-in{padding-top:112px;padding-bottom:120px;display:flex;flex-direction:column;gap:72px}
+@media (max-width:600px){.sec-in{padding-top:72px;padding-bottom:80px;gap:56px}.hero{padding-top:64px;padding-bottom:64px}}
+.sec-head{display:flex;flex-wrap:wrap;gap:48px 64px;align-items:flex-end}
+.sec-main{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.tag{display:flex;align-items:center;gap:14px}.tag img{width:52px;height:52px;border-radius:13px}
+.h-sec{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6vw,80px);line-height:1.02;letter-spacing:-.02em}
+.facts{flex:1 1 340px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px}
+.fact{display:flex;flex-direction:column;gap:6px;padding-top:16px;border-top:1px solid #D9C6AF}
+.fl{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.facts.brown .fl{color:var(--brown)}.facts.purple .fl{color:var(--purple)}.facts.purple .fact{border-top-color:var(--line)}
+.fv{font-size:16px;line-height:1.45}
+.phone{width:100%;padding:7px;border-radius:42px;background:#3A2E27;box-shadow:0 30px 60px -24px rgba(62,45,35,.28)}
+.phone img{display:block;width:100%;height:auto;aspect-ratio:660/1434;border-radius:35px}
+.phone.cg{background:#3A2C48;box-shadow:0 26px 46px -24px rgba(110,60,90,.3)}
+.phone.small{width:210px;max-width:100%}
+.db-panel{position:relative;overflow:hidden;border-radius:40px;background:#F5E1CA;padding:72px 40px 0}
+@media (max-width:600px){.db-panel{padding:40px 16px 0;border-radius:28px}}
+.db-sun{position:absolute;left:50%;top:56%;width:640px;height:640px;margin:-320px 0 0 -320px;border-radius:999px;background:#E9A06C}
+.db-trio{position:relative;max-width:880px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,3vw,40px);align-items:start}
+.db-trio .down{padding-top:72px}
+@media (max-width:600px){.db-trio .down{padding-top:36px}.phone{padding:4px;border-radius:24px}.phone img{border-radius:20px}}
+.db-cap{position:relative;margin:40px auto 0;padding-bottom:36px;text-align:center;font-size:15px;color:#5C4636;max-width:520px}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px}
+.feat{display:flex;flex-direction:column;gap:22px;padding:28px 28px 32px;border-radius:28px;background:#FDF5EA;border:1px solid #EDD9C0}
+.feat-img{display:flex;justify-content:center;padding:8px 0 4px}
+.feat .phone.small{padding:7px;border-radius:42px}.feat .phone.small img{border-radius:35px}
+.stack8{display:flex;flex-direction:column;gap:8px}.stack26{display:flex;flex-direction:column;gap:26px}
+.h-card{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.2}
+.p-card{font-size:16px;line-height:1.55;color:#5C4636}
+.dec{display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:36px 32px;border-radius:28px;background:#3E2D23;color:#F3EBDF}
+.dec .p-card{color:#DCCBB8}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px}
+.chip{display:flex;flex-direction:column;gap:4px;padding:18px 22px;border-radius:20px;background:#FFF8EE;border:1px solid var(--line)}
+.chip-a{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.1;color:var(--purple)}
+.chip-b{font-size:14px;color:#665348}
+.block{display:flex;flex-direction:column;gap:32px}
+.h-block{font-family:var(--serif);font-weight:600;font-size:30px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:32px 28px}
+.shots.tinted{padding:48px 40px 44px;border-radius:40px;background:#F3E8EE}
+@media (max-width:600px){.shots{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}.shots.tinted{padding:24px 16px;border-radius:28px}}
+.shot{margin:0;display:flex;flex-direction:column;gap:18px}
+.shot figcaption{display:flex;flex-direction:column;gap:6px}
+.st{font-family:var(--serif);font-weight:600;font-size:19px}
+.sb{font-size:15px;line-height:1.5;color:#665348}
+.hoods{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
+.hood{display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:24px;background:#2F2440;color:#F3EDF7}
+.hood-k{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C9B2EC}
+.hood h4{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.25}
+.hood p{font-size:16px;line-height:1.55;color:#DCD0E8}
+.cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding:36px 40px;border-radius:32px;background:#F3E8EE;color:#4A3466}
+.cta-t{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.cta-h{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.15}
+.cta-b{font-size:17px;line-height:1.5;color:#6B5288}
+.cta-btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn-purple,.btn-outline{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px}
+.btn-purple{background:var(--purple);color:#fff}
+.btn-outline{border:2px solid var(--purple);color:var(--purple)}
+.work{gap:56px}
+.work-head{display:flex;flex-direction:column;gap:20px;max-width:760px}
+.h-sec2{font-family:var(--serif);font-weight:600;font-size:clamp(36px,5vw,64px);line-height:1.04;letter-spacing:-.02em}
+.h-block2{font-family:var(--serif);font-weight:600;font-size:26px}
+.work .block{gap:20px}
+.cards{display:grid;gap:20px}
+.cards.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.cards.three{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.card{display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:24px;background:#FFF8EE;border:1px solid var(--line)}
+.card h4{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.25}
+.card p{font-size:16px;line-height:1.55;color:var(--ink2)}
+.card-m,.card-s{font-size:14px;color:var(--ink3)}
+.card-s{margin-top:auto;padding-top:8px}
+.note{font-size:16px;line-height:1.55;color:var(--ink2)}
+.foot{background:var(--ink);color:var(--cream)}
+.foot-in{padding-top:96px;padding-bottom:64px;display:flex;flex-direction:column;gap:56px}
+.foot-top{display:flex;flex-direction:column;align-items:flex-start;gap:28px}
+.foot-h{max-width:1000px;font-family:var(--serif);font-weight:600;font-size:clamp(36px,5.6vw,72px);line-height:1;letter-spacing:-.02em}
+.btn-light{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;background:var(--cream);color:var(--ink)!important;text-decoration:none;font-weight:600;font-size:18px;max-width:100%}
+.foot-links{display:flex;flex-wrap:wrap;gap:12px}
+.btn-line{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;border:1px solid #8C7766;color:var(--cream);text-decoration:none;font-weight:600;font-size:16px}
+.foot-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;border-top:1px solid #54443A;font-size:14px;color:#BFAE9C}
+:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><nav aria-label="Main" class="wrap nav">
+<a href="#top" class="brand">Ayşe Çetin</a>
+<div class="nav-r">
+<a href="#daily-brew">Daily Brew</a><a href="#color-gates">Color Gates</a><a data-i18n="navWork" href="#work">Other work</a>
+<div class="lang" role="group" data-i18n-aria="langLabel" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="tr" aria-pressed="false">TR</button></div>
+<a class="btn-dark" data-i18n="navContact" href="mailto:aysecetiw@icloud.com">Get in touch</a>
+</div></nav></header>
+<main id="main">
+<section id="top" class="wrap hero">
+<div class="hero-text"><span class="kicker" data-i18n="heroKicker">Mobile apps &amp; games · Antalya, Türkiye</span><h1 data-i18n="heroTitle">I design and build mobile products, from first sketch to store listing.</h1><p class="lead" data-i18n="heroLead">Two of them are below: a habit tracker that turns a daily routine into a pour-over ritual, and a timed color puzzle with 10,000 levels. For both I made the product decisions, the interface, the code and the store pages. Further down: two internships and other projects.</p></div>
+<div class="hero-cards">
+<a href="#daily-brew" class="pcard db"><img src="assets/db-icon.webp" alt="" width="72" height="72"><div><span class="pc-t">Daily Brew</span><span class="pc-s" data-i18n="dbCardSub">Habit tracker · Expo, React Native</span></div><span class="pc-a"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a href="#color-gates" class="pcard cg"><img src="assets/cg-icon.webp" alt="" width="72" height="72"><div><span class="pc-t">Color Gates</span><span class="pc-s" data-i18n="cgCardSub">Puzzle game · Next.js, Capacitor</span></div><span class="pc-a"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+</div></section>
 
-<header class="sheet">
-  <div class="wrap">
-    <div class="masthead">
-      <span class="name">Ayşe Çetin</span>
-      <nav>
-        <a href="#uctan-uca">Uçtan uca</a>
-        <a href="#isler">İşler</a>
-        <a href="#deneyim">Deneyim</a>
-        <a href="#bilgi">Ne biliyorum</a>
-        <a href="#iletisim">İletişim</a>
-      </nav>
-    </div>
-    <hr class="rule rule--heavy">
-  </div>
-</header>
+<section id="daily-brew" class="sec" aria-labelledby="db-title"><div class="wrap sec-in">
+<div class="sec-head"><div class="sec-main">
+<div class="tag"><img src="assets/db-icon.webp" width="52" height="52" data-i18n-alt="dbIconAlt" alt="Daily Brew app icon"><span class="kicker brown">01 · Daily Brew</span></div>
+<h2 class="h-sec" data-i18n="dbTitle" id="db-title">Habits, brewed daily.</h2><p class="lead" data-i18n="dbLead">Daily Brew treats every habit as a recipe. As you complete them through the day, the glass carafe on the home screen fills up. Finish the day and steam rises from the cup.</p></div>
+<div class="facts brown"><div class="fact"><span class="fl" data-i18n="lRole">Role</span><span class="fv" data-i18n="dbRole">Product, UI and development</span></div><div class="fact"><span class="fl" data-i18n="lStack">Stack</span><span class="fv">Expo, React Native, TypeScript</span></div><div class="fact"><span class="fl" data-i18n="lPlatform">Platform</span><span class="fv" data-i18n="dbPlatform">iOS and Android, offline-first</span></div><div class="fact"><span class="fl" data-i18n="lLangs">Languages</span><span class="fv" data-i18n="dbLangs">Turkish, English, German</span></div></div>
+</div>
+<div class="db-panel"><div class="db-sun" aria-hidden="true"></div><div class="db-trio">
+<div class="down"><div class="phone"><img src="assets/db-home.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altDb1" alt="Daily Brew home screen in light theme: the carafe is 75% full, 3 of 4 recipes brewed"></div></div><div><div class="phone"><img src="assets/db-timer.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altDb3" alt="Brew timer for the Quiet coffee recipe with 8:25 left"></div></div><div class="down"><div class="phone"><img src="assets/db-dark.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altDb2" alt="Daily Brew home screen in dark theme"></div></div>
+</div><p class="db-cap" data-i18n="dbPanelCap">Home in light and dark themes, with the brew timer in the middle.</p></div>
+<div class="feats">
+<article class="feat"><div class="feat-img"><div class="phone small"><img src="assets/db-recipes.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altDb4" alt="Recipes list: Reading, Morning walk, Call the family, Quiet coffee and Coding session"></div></div><div class="stack8"><h3 class="h-card" data-i18n="f1t">Every habit is a recipe</h3><p class="p-card" data-i18n="f1b">A recipe has a name, a target and the days it repeats. One-tap habits, counters and timed brews all live in the same list.</p></div></article><article class="feat"><div class="feat-img"><div class="phone small"><img src="assets/db-report.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altDb5" alt="Tasting Report: a 341-day brew streak, a top score of 93% and a year of brews"></div></div><div class="stack8"><h3 class="h-card" data-i18n="f2t">Streaks that forgive</h3><p class="p-card" data-i18n="f2b">Each recipe keeps its own streak. Rest days don’t break it, and once a month a “wet filter” pass forgives a missed day. The report shows focus time by week and a whole year of brews.</p></div></article><article class="feat"><div class="feat-img"><div class="phone small"><img src="assets/db-tasting.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altDb6" alt="Taste today: body, acidity and balance ratings with a short note"></div></div><div class="stack8"><h3 class="h-card" data-i18n="f3t">A tasting note for the day</h3><p class="p-card" data-i18n="f3b">A short evening check-in borrowed from coffee cupping: body, acidity and balance, plus a line of notes.</p></div></article><article class="feat"><div class="feat-img"><div class="phone small"><img src="assets/db-share.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altDb7" alt="Share card showing a 341-day Daily Brew streak"></div></div><div class="stack8"><h3 class="h-card" data-i18n="f4t">Made to be shared</h3><p class="p-card" data-i18n="f4b">A story-ready card with your streak, copied in one tap and pasted straight into an Instagram story.</p></div></article><article class="feat"><div class="feat-img"><div class="phone small"><img src="assets/db-history.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altDb8" alt="Recent tastings list with body, acidity and balance ratings and a note for each day"></div></div><div class="stack8"><h3 class="h-card" data-i18n="f5t">Recent tastings</h3><p class="p-card" data-i18n="f5b">Past tasting notes stay in a list, day by day, like a small coffee journal.</p></div></article>
+<article class="dec"><span class="kicker peach" data-i18n="decKicker">Product decisions</span><div class="stack26"><div class="stack8"><h3 class="h-card" data-i18n="d1t">Ads stay out of the ritual</h3><p class="p-card" data-i18n="d1b">The app is free with AdMob banners, but only on the Report and Settings screens. The home screen and the timer never show an ad, and there are no full-screen ads.</p></div><div class="stack8"><h3 class="h-card" data-i18n="d2t">No account needed</h3><p class="p-card" data-i18n="d2b">Everything works offline and records stay on the phone. The timer keeps running in the background and sends a notification when time is up.</p></div></div></article>
+</div></div></section>
 
-<main>
-  <div class="wrap">
+<section id="color-gates" class="sec" aria-labelledby="cg-title"><div class="wrap sec-in">
+<div class="sec-head"><div class="sec-main">
+<div class="tag"><img src="assets/cg-icon.webp" width="52" height="52" data-i18n-alt="cgIconAlt" alt="Color Gates app icon"><span class="kicker purple">02 · Color Gates Puzzle</span></div>
+<h2 class="h-sec" data-i18n="cgTitle" id="cg-title">Slide every block out through its own color.</h2><p class="lead" data-i18n="cgLead">A free, timed sliding-block puzzle. Each block can leave the board only through the gate of the same color, before the clock runs out. Shaped pieces, rails, chains and ropes make later levels harder.</p></div>
+<div class="facts purple"><div class="fact"><span class="fl" data-i18n="lRole">Role</span><span class="fv" data-i18n="cgRole">Game design, UI and development</span></div><div class="fact"><span class="fl" data-i18n="lStack">Stack</span><span class="fv" data-i18n="cgStack">Next.js, Capacitor 8, Phaser 3</span></div><div class="fact"><span class="fl" data-i18n="lStarted">Started</span><span class="fv" data-i18n="cgStarted">July 2026</span></div><div class="fact"><span class="fl" data-i18n="lRevenue">Revenue</span><span class="fv" data-i18n="cgRevenue">AdMob rewarded ads only, started by the player</span></div></div>
+</div>
+<div class="chips"><div class="chip"><span class="chip-a" data-i18n="c1a">10,000</span><span class="chip-b" data-i18n="c1b">levels</span></div><div class="chip"><span class="chip-a" data-i18n="c2a">135 cards</span><span class="chip-b" data-i18n="c2b">in 15 sets, autumn album</span></div><div class="chip"><span class="chip-a" data-i18n="c3a">4 languages</span><span class="chip-b" data-i18n="c3b">Turkish, English, German, French</span></div><div class="chip"><span class="chip-a" data-i18n="c4a">Offline</span><span class="chip-b" data-i18n="c4b">no login, progress stays on the device</span></div></div>
+<div class="block"><h3 class="h-block" data-i18n="loopTitle">The core loop</h3><div class="shots tinted">
+<figure class="shot"><div class="phone cg"><img src="assets/cg-home.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altCg1" alt="Home screen with the Level 312 button, events and a Pink Block Hunt bar"></div><figcaption><span class="st" data-i18n="s1t">Home</span><span class="sb" data-i18n="s1b">One big button to the next level, with live events around it.</span></figcaption></figure><figure class="shot"><div class="phone cg"><img src="assets/cg-board.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altCg2" alt="Level 113 board with a 0:50 timer and colored gates on the walls"></div><figcaption><span class="st" data-i18n="s2t">The board</span><span class="sb" data-i18n="s2b">Each block leaves only through the gate of its own color, before the timer runs out.</span></figcaption></figure><figure class="shot"><div class="phone cg"><img src="assets/cg-board-chains.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altCg3" alt="Level 124 board with chained and locked blocks"></div><figcaption><span class="st" data-i18n="s3t">Later levels</span><span class="sb" data-i18n="s3b">Shaped pieces, chains and locks turn the same rule into real puzzles.</span></figcaption></figure><figure class="shot"><div class="phone cg"><img src="assets/cg-boosters.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altCg4" alt="Vacuum booster selected, with a hint to tap a piece"></div><figcaption><span class="st" data-i18n="s4t">Boosters</span><span class="sb" data-i18n="s4b">Hammer, rocket, vacuum and extra time help when a level gets stuck.</span></figcaption></figure>
+</div></div>
+<div class="block"><h3 class="h-block" data-i18n="metaTitle">Reasons to come back tomorrow</h3><div class="shots">
+<figure class="shot"><div class="phone cg"><img src="assets/cg-album.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altCg5" alt="Autumn Album with sets such as Forest Walk, Rainy City and Harvest Feast"></div><figcaption><span class="st" data-i18n="m1t">Card album</span><span class="sb" data-i18n="m1b">A seasonal album to fill, set by set.</span></figcaption></figure><figure class="shot"><div class="phone cg"><img src="assets/cg-daily.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altCg6" alt="Daily tasks notebook with five small goals"></div><figcaption><span class="st" data-i18n="m2t">Daily tasks</span><span class="sb" data-i18n="m2b">Five small goals a day, with a countdown to the next set.</span></figcaption></figure><figure class="shot"><div class="phone cg"><img src="assets/cg-star.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altCg7" alt="Star Chest filling up, with rewards inside"></div><figcaption><span class="st" data-i18n="m3t">Star chest</span><span class="sb" data-i18n="m3b">Earn a star every level; 20 stars open the chest.</span></figcaption></figure><figure class="shot"><div class="phone cg"><img src="assets/cg-turtle.webp" width="660" height="1434" loading="lazy" decoding="async" data-i18n-alt="altCg8" alt="Treasure Turtle event collecting coins in its shell"></div><figcaption><span class="st" data-i18n="m4t">Events</span><span class="sb" data-i18n="m4b">Timed events like Treasure Turtle add a second goal on top of levels.</span></figcaption></figure>
+</div></div>
+<div class="block"><h3 class="h-block" data-i18n="hoodTitle">Under the hood</h3><div class="hoods">
+<article class="hood"><span class="hood-k">TypeScript</span><h4 data-i18n="u1t">Levels are generated, then proven solvable</h4><p data-i18n="u1b">No level is stored. A seeded generator builds each one from its number, so level 57 is the same on every phone, and a solver checks it can be cleared before it is shown.</p></article><article class="hood"><span class="hood-k">Phaser 3 · MRAID</span><h4 data-i18n="u2t">A playable ad from the same rules</h4><p data-i18n="u2b">The playable ad is built with Phaser 3 and imports the game’s own board and gate logic. It ships as one 0.8 MB HTML file with an MRAID-ready install button.</p></article><article class="hood"><span class="hood-k">Node · SQLite · Caddy</span><h4 data-i18n="u3t">My own server</h4><p data-i18n="u3b">The leaderboard runs on a Linux server I set up: Caddy for HTTPS, Node under systemd, SQLite with Drizzle, token auth, rate limiting and nightly backups.</p></article><article class="hood"><span class="hood-k">iOS · App Review</span><h4 data-i18n="u4t">Through App Review</h4><p data-i18n="u4b">The first build was rejected over an iPadOS requirement; I fixed it and resubmitted. Social features that could count as dormant were removed to meet guideline 2.5.19.</p></article>
+</div></div>
+<div class="cta"><div class="cta-t"><span class="cta-h" data-i18n="ctaTitle">Try it in the browser</span><span class="cta-b" data-i18n="ctaBody">I also built an HTML5 playable-ad version of the game: one short level, ready for ad networks.</span></div>
+<div class="cta-btns"><a class="btn-purple" href="https://colorgatespuzzle.com.tr/playable"><span data-i18n="ctaPlay">Play the playable ad</span> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a class="btn-outline" href="https://colorgatespuzzle.com.tr">colorgatespuzzle.com.tr <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div>
+</div></section>
 
-    <div class="hero">
-      <h1>Şemadan sunucuya, ürünün tamamını ben yazıyorum.</h1>
-      <p class="lede">Yazılım geliştiriyorum. Yönetim Bilişim Sistemleri mezunuyum — Pamukkale Üniversitesi, 2026. Zincirin her halkasında çalıştım: sistem tasarımı, arka uç, arayüz, sahaya çıkan donanım, kendi yönettiğim sunucu ve sonrasındaki bakım. Dört ürün bu şekilde çıktı; biri abonelik satıyor, biri TÜBİTAK kabulü aldı, ikisi mağazaya hazırlanıyor.</p>
-      <p>Bir işe başlarken önce onu kimin, nerede, hangi koşulda açacağını yazarım. Şema ondan sonra geliyor, kod en son.</p>
-    </div>
-
-    <section id="uctan-uca">
-      <div class="section-head">
-        <h2>Uçtan uca</h2>
-        <p class="section-note">Bir ürünün fikirden mağazaya giderken geçtiği altı aşama. Altısında da aktif rol aldım.</p>
-      </div>
-
-      <div class="chain">
-        <div class="stage">
-          <h3>Sistem tasarımı</h3>
-          <p>Kullanıcı ve kullanım koşulunu yazmakla başlıyorum. Kullanım senaryosu, ER ve veri akış diyagramları, fizibilite.</p>
-        </div>
-        <div class="stage">
-          <h3>Arka uç</h3>
-          <p>Django, FastAPI, PostgreSQL ve PostGIS. REST API, rol bazlı yetkilendirme, göç dosyaları, audit log, istek sınırı.</p>
-        </div>
-        <div class="stage">
-          <h3>Arayüz</h3>
-          <p>React, React Native ve Vite. Çevrimdışı çalışan ekranlar, harita arayüzleri, güneş altında okunabilen kontrast.</p>
-        </div>
-        <div class="stage">
-          <h3>Donanım</h3>
-          <p>ESP32 ve SIM808. Konum basan, sunucudan yeni aralığını öğrenen ve bölge ihlalinde kullanıcıyı arayan cihaz.</p>
-        </div>
-        <div class="stage">
-          <h3>Yayın</h3>
-          <p>Kendi Linux sunucumu CloudPanel ile yönetiyorum: Nginx, Gunicorn, SSL, alan adı. Vitrin işleri Vercel ve Render'da. Mobilde EAS Build, mağaza ve gizlilik hazırlığı.</p>
-        </div>
-        <div class="stage">
-          <h3>Bakım</h3>
-          <p>Yayından sonrası da bende: bozulanı teşhis edip düzeltmek, gelen değişiklik isteklerini uygulamak, sistemi ayakta tutmak. Haritanın karo sağlayıcısı bir gün kapandığında sorunu bulup kalıcı çözümü kurdum.</p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule rule--2" style="margin-top:clamp(2.75rem,7vw,4.5rem)">
-
-    <section id="isler">
-      <div class="section-head">
-        <h2>İşler</h2>
-        <p class="section-note">Dördünün de ürün kararlarını ve kodunu yazdım. Hangisinde kiminle birlikte çalıştığım aşağıda ayrı ayrı duruyor.</p>
-      </div>
-
-      <article class="record">
-        <div class="record-head">
-          <h3>SürüTakip</h3>
-          <span class="kind">GPS destekli sürü yönetimi platformu</span>
-        </div>
-        <dl>
-          <dt>Kim kullanıyor</dt>
-          <dd>Küçük ve orta ölçekli hayvancılık işletmelerinin sahipleri ve çobanları. İkinci kullanıcı, gelen talepleri karşılayan veterinerler.</dd>
-          <dt>Hangi koşulda</dt>
-          <dd>Sahada da masa başında da. Arayüzü en zor koşulu gözeterek kurdum — güneş altında okunabilen kontrast, büyük dokunma hedefleri, etiketli düğmeler, zayıf şebekede ayakta kalan ekranlar — ama kullanım oraya sıkışmıyor; aynı işler web panelinden tam kapsamıyla yapılıyor.</dd>
-          <dt>Ne yapıyor</dt>
-          <dd>Hayvan kayıtları, canlı konum takibi, haritaya çizilen bölgeden çıkışta alarm ve cihazın GSM üzerinden telefon araması, hareketsizlik ve düşük pil uyarıları, ruhsatlı hayvan pazarı ilanları, il bazlı veteriner eşleştirmesi, abonelik ve ödeme.</dd>
-          <dt>Benim yaptığım</dt>
-          <dd>Django + PostgreSQL web uygulaması ve Expo mobil uygulaması; ESP32 + SIM808 takip cihazının yazılımı ve cihazın her sinyalde sunucudan yeni sinyal aralığını öğrendiği <em>config</em> akışı; ticari kullanıma açık bir karo sağlayıcısına geçiş ve kendi önbellekli harita proxy'miz. Kapsamı ve öncelikleri staj sorumlumla birlikte belirledik.</dd>
-          <dt>Durum</dt>
-          <dd>Render üzerinde canlı. Abonelik satan ticari bir ürün.</dd>
-        </dl>
-        <p class="stack"><span>Django</span><span>PostgreSQL</span><span>Expo / React Native</span><span>TypeScript</span><span>ESP32 + SIM808</span><span>Leaflet</span><span>Render</span></p>
-      </article>
-
-      <article class="record">
-        <div class="record-head">
-          <h3>DisasterAI</h3>
-          <span class="kind">Afet risk analizi — lisans tezi ve TÜBİTAK 2209-A projesi</span>
-        </div>
-        <dl>
-          <dt>Kim kullanıyor</dt>
-          <dd>Teknik olmayan vatandaş. Afet risk haritaları kamuya açık ama okunabilir değil; bu uygulamanın varlık sebebi o veriyi "benim binam ne durumda" sorusuna cevap verecek hâle getirmek.</dd>
-          <dt>Ne yapıyor</dt>
-          <dd>Kullanıcı haritadan bir konum seçip binasının bilgilerini giriyor; uygulama deprem, heyelan ve sel için risk skoru üretiyor, riski harita katmanı olarak gösteriyor, <em>skor neden böyle</em> diye açıklıyor, en yakın toplanma alanına yol ağı üzerinden yürüyüş rotası çiziyor, senaryoları karşılaştırıyor ve PDF rapor veriyor.</dd>
-          <dt>Benim yaptığım</dt>
-          <dd>FastAPI arka uç ve coğrafi katmanların ağırlıklı çakıştırılmasıyla risk skorlaması; bina bilgilerinden hassasiyet hesabı; React + Leaflet arayüz; Gemini destekli analiz asistanı. Proje yürütme tarafında araştırma planı, bütçe işlemleri ve akademik raporlama.</dd>
-          <dt>Durum</dt>
-          <dd>TÜBİTAK 2209-A kabul aldı. Çalışma alanı İzmir Seferihisar. Danışman: Dr. Mehmet Ulaş Koyuncuoğlu, Pamukkale Üniversitesi.</dd>
-        </dl>
-        <p class="stack"><span>Python</span><span>FastAPI</span><span>GeoPandas</span><span>Rasterio</span><span>Shapely</span><span>React</span><span>Vite</span><span>Leaflet</span><span>Gemini 2.5 Flash</span></p>
-      </article>
-
-      <article class="record">
-        <div class="record-head">
-          <h3>Daily Brew</h3>
-          <span class="kind">Alışkanlık takip uygulaması</span>
-        </div>
-        <dl>
-          <dt>Kim kullanıyor</dt>
-          <dd>Günlük alışkanlıklarını takip etmek isteyen kişi. Uygulamanın teması V60 kahve demleme, ama takip ettiği şey alışkanlığın kendisi.</dd>
-          <dt>Ne yapıyor</dt>
-          <dd>Alışkanlık tanımlama ve günlük işaretleme, seri takibi, rapor ekranı, verilerin JSON olarak dışa aktarılması, offline-first çalışma. Temaya bağlı olarak demleme sayacı ve tadım notları da var.</dd>
-          <dt>Benim yaptığım</dt>
-          <dd>Uygulamanın tamamı: Expo + TypeScript, yerel SQLite veri katmanı ve göç dosyaları, Skia ile çizim, EAS ile derleme. Gelir tarafında AdMob banner'ları ve açılışta çalışan UMP onay akışı. Apple'ın istediği gizlilik beyanlarını Expo kendisi üretmiyor ve eksik beyan yüklemede ret sebebi; bağımlılıkları tarayıp gereken bloğu çıkaran ve uygulama ayarıyla karşılaştıran bir betik yazdım.</dd>
-          <dt>Durum</dt>
-          <dd>Android'de kendi APK'sıyla çalışıyor, AdMob gerçek kimlikleriyle bağlı. iOS için TestFlight hazırlığı sürüyor.</dd>
-        </dl>
-        <p class="stack"><span>Expo / React Native</span><span>TypeScript</span><span>SQLite</span><span>Skia</span><span>Reanimated</span><span>AdMob</span><span>EAS Build</span></p>
-      </article>
-
-      <article class="record">
-        <div class="record-head">
-          <h3>Color Gates Puzzle</h3>
-          <span class="kind">Mobil bulmaca oyunu</span>
-        </div>
-        <dl>
-          <dt>Kim kullanıyor</dt>
-          <dd>Telefonda kısa molalarda oynayan kişi. Kaybedilen bir bölüm can yakmamalı, kazanılan bir bölüm bir sonrakini açmalı.</dd>
-          <dt>Ne yapıyor</dt>
-          <dd>Renkli parçalar tahtada kaydırılarak yalnızca kendi renklerindeki kapıdan çıkarılıyor. Bölümler önceden yazılmış bir listeden gelmiyor; istendiği anda üretiliyor ve her biri, oynanmadan önce bir çözücüden geçirilip gerçekten çözülebildiği doğrulanıyor.</dd>
-          <dt>Benim yaptığım</dt>
-          <dd>Bölüm üreteci, çözücü ve doğrulayıcı; zorluk sıralaması ile tahta boyu, parça yoğunluğu ve süre hesabının birbirine bağlanması; can ve ödül ekonomisi, koleksiyon ve lider tablosu; React arayüz ve Capacitor ile Android paketi.</dd>
-          <dt>Durum</dt>
-          <dd>Web sürümü ve Android derlemesi çalışıyor, mağaza hazırlığı sürüyor.</dd>
-        </dl>
-        <p class="stack"><span>TypeScript</span><span>React</span><span>Vite</span><span>Capacitor</span><span>Drizzle</span></p>
-      </article>
-    </section>
-
-    <hr class="rule rule--3" style="margin-top:clamp(2.75rem,7vw,4.5rem)">
-
-    <section id="deneyim">
-      <h2>Deneyim</h2>
-
-      <div class="entry">
-        <div class="entry-head">
-          <h3>Pro Yıldız Yazılım</h3>
-          <span class="when">Temmuz – Ağustos 2026 · Denizli</span>
-        </div>
-        <p class="role">Yazılım stajyeri</p>
-        <ul>
-          <li>Staj sorumlumla kapsamı ve önceliği birlikte kararlaştırdığımız işleri geliştirdim; çıkan her iş gerçek bir müşteri ihtiyacına bağlıydı.</li>
-          <li>Toptan gıda ve temizlik ürünleri satan bir firma için içeriği tamamen admin panelinden yönetilebilen kurumsal site (Django).</li>
-          <li>Güvenlik sistemleri satan bir firma için ürün listeleme, sepet ve sipariş akışı olan e-ticaret sitesi.</li>
-          <li>Sanayideki oto yedek parçacılarını parça arayan müşterilerle buluşturan pazaryeri prototipi. İhtiyaç analizini sanayicilerle görüşerek staj sorumlum yaptı; çıkan ihtiyaçları birlikte değerlendirip prototipi geliştirdim.</li>
-          <li>SürüTakip platformu — yukarıda.</li>
-        </ul>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <h3>NewMind AI</h3>
-          <span class="when">Ağustos – Eylül 2025</span>
-        </div>
-        <p class="role">Yapay zekâ stajyeri, LLM ekibi</p>
-        <ul>
-          <li>Dense, BM25 ve hibrit arama senaryolarını karşılaştıran kıyaslama çalışmalarına katkı verdim; sonuçlar RAG tarafındaki arama kalitesini değerlendirmek için kullanıldı.</li>
-          <li>Kıyaslama ve eşzamanlılık testlerini elle çalıştırmak yerine arayüzünden tetiklenebilen, FastAPI tabanlı bir iç araç geliştirdim.</li>
-          <li>Prometheus ve Grafana üzerinde sistem metriklerini izleyen panolar kurup yorumlayarak performans darboğazlarını çıkardım.</li>
-          <li>LLM eğitim ve çıkarım süreçlerini araştırıp ekibin başvurabileceği teknik dokümantasyona dönüştürdüm.</li>
-        </ul>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <h3>Pamukkale Üniversitesi</h3>
-          <span class="when">2022 – 2026</span>
-        </div>
-        <p class="role">Lisans, Yönetim Bilişim Sistemleri</p>
-        <ul>
-          <li>Bitirme tezi: DisasterAI — yukarıda.</li>
-          <li>Geleneksel meslekleri yaşatmayı hedefleyen bir platform için uçtan uca sistem analizi: kullanıcı ihtiyaçları, iş süreçleri, kullanım senaryosu ve veri akış diyagramları, teknik ve mali fizibilite.</li>
-          <li>Müşteri, satış ve kampanya süreçlerini kapsayan ilişkisel bir CRM veritabanı tasarımı (PostgreSQL).</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="bilgi">
-      <h2>Ne biliyorum</h2>
-      <dl class="skills">
-        <dt>Arka uç</dt>
-        <dd>Python, Django, FastAPI, PostgreSQL, PostGIS, SQLite, REST API tasarımı, kimlik doğrulama ve rol yetkilendirme</dd>
-        <dt>Arayüz</dt>
-        <dd>TypeScript, React, React Native (Expo), Vite, Next.js, Tailwind CSS, erişilebilirlik ve çevrimdışı çalışan arayüzler</dd>
-        <dt>Coğrafi veri</dt>
-        <dd>GeoPandas, Shapely, Rasterio, PyProj, Leaflet, OpenStreetMap, ArcGIS, rota ve mesafe hesabı</dd>
-        <dt>Yapay zekâ</dt>
-        <dd>LLM tabanlı sistemler, RAG, arama kıyaslaması (dense / BM25 / hibrit), istem tasarımı, LangChain, Gemini</dd>
-        <dt>Ürün ve analiz</dt>
-        <dd>Kullanıcı ihtiyaç analizi, gereksinim toplama, özellik önceliklendirme, fizibilite, UML ve kullanım senaryosu diyagramları, ER ve veri akış diyagramları</dd>
-        <dt>Sunucu ve yayın</dt>
-        <dd>DeHost'ta CloudPanel ile yönetilen Linux VPS, Nginx, Gunicorn, SSL ve alan adı, Vercel, Render, EAS Build, Play Console ve App Store yayın hazırlığı</dd>
-        <dt>Donanım</dt>
-        <dd>ESP32, SIM808 ile GSM ve GPS, cihaz–sunucu haberleşmesi</dd>
-        <dt>Diller</dt>
-        <dd>Türkçe (ana dil), İngilizce (B1+ — teknik dokümantasyon takibi ve literatür araştırması)</dd>
-      </dl>
-    </section>
-
-    <section id="iletisim" class="contact">
-      <h2>İletişim</h2>
-      <p>Ürün ve yazılım tarafında çalışabileceğim işlere açığım. Yukarıdaki projelerden birini ayrıntısıyla konuşmak isterseniz yazın, memnuniyetle anlatırım.</p>
-      <ul>
-        <li><a href="mailto:aysecetiw@icloud.com">aysecetiw@icloud.com</a></li>
-        <li><a href="https://www.linkedin.com/in/ayseecetin/">linkedin.com/in/ayseecetin</a></li>
-        <li><a href="https://github.com/aysecetin">github.com/aysecetin</a></li>
-        <li>Denizli, Türkiye</li>
-      </ul>
-    </section>
-
-  </div>
+<section id="work" class="sec" aria-labelledby="work-title"><div class="wrap sec-in work">
+<div class="work-head"><span class="kicker brown">03 · <span data-i18n="workKicker">Other work</span></span><h2 class="h-sec2" data-i18n="workTitle" id="work-title">Internships and earlier projects.</h2><p class="lead" data-i18n="workLead">Before Color Gates I worked on web, backend and AI projects, including two internships and a TÜBİTAK-accepted thesis.</p></div>
+<div class="block"><h3 class="h-block2" data-i18n="expTitle">Experience</h3><div class="cards two"><article class="card"><span class="card-m" data-i18n="e1m">July – August 2026 · Denizli</span><h4 data-i18n="e1t">Software Intern, Pro Yıldız Yazılım</h4><p data-i18n="e1b">Built SürüTakip with scope and priorities set together with my supervisor. Also delivered client work: a Django corporate site run from an admin panel, an e-commerce site with cart and orders, and a marketplace prototype for auto-parts sellers.</p></article><article class="card"><span class="card-m" data-i18n="e2m">August – September 2025</span><h4 data-i18n="e2t">AI Intern, LLM team, NewMind AI</h4><p data-i18n="e2b">Helped benchmark dense, BM25 and hybrid retrieval for RAG search quality. Built a FastAPI tool that runs benchmark and load tests from a UI, and set up Prometheus and Grafana dashboards to find bottlenecks.</p></article></div></div>
+<div class="block"><h3 class="h-block2" data-i18n="projTitle">Earlier projects</h3><div class="cards three"><article class="card"><h4 data-i18n="p1t">SürüTakip — GPS herd management</h4><p data-i18n="p1b">Web and mobile app for livestock owners and vets: live location, geofence alarms where the tracker phones the owner over GSM, and low-battery alerts. I also wrote the tracker firmware.</p><span class="card-s">Django · PostgreSQL · Expo · ESP32 + SIM808</span></article><article class="card"><h4 data-i18n="p2t">DisasterAI — disaster risk analysis</h4><p data-i18n="p2b">My B.Sc. thesis, accepted under TÜBİTAK 2209-A: earthquake, landslide and flood risk for a chosen building, with a map, an explanation of the score, a walking route to the nearest assembly area and a PDF report.</p><span class="card-s">FastAPI · GeoPandas · React · Leaflet</span></article><article class="card"><h4 data-i18n="p3t">Baba Asistan — voice assistant</h4><p data-i18n="p3b">A Turkish voice assistant for my father’s Android phone: an offline “Hey Paşa” wake word, calling contacts by name and playing Spotify by voice.</p><span class="card-s">Kotlin · Android · Vosk</span></article></div></div>
+<p class="note" data-i18n="workNote">The code of these projects is private. I’m happy to walk through any of them in an interview.</p>
+</div></section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <hr class="rule" style="margin-bottom:1rem">
-    Ayşe Çetin, 2026
-  </div>
-</footer>
+<footer id="contact" class="foot"><div class="wrap foot-in">
+<div class="foot-top"><h2 class="foot-h" data-i18n="footTitle">Building a playable ad or a mobile game? Let’s talk.</h2>
+<a class="btn-light" href="mailto:aysecetiw@icloud.com">aysecetiw@icloud.com <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<div class="foot-links"><a class="btn-line" data-i18n="footCv" data-i18n-href="cvHref" href="Ayse_Cetin_CV.pdf">Download CV (PDF)</a><a class="btn-line" href="https://www.linkedin.com/in/ayseecetin/">LinkedIn</a><a class="btn-line" href="https://github.com/aysecetin">GitHub</a></div>
+</div>
+<div class="foot-bot"><span>© 2026 Ayşe Çetin</span><span data-i18n="footLoc">Antalya · Open to remote work</span></div>
+</div></footer>
 
+<script>(function(){var D={en:{"title": "Ayşe Çetin — Mobile apps & games", "metaDesc": "Portfolio of Ayşe Çetin: Daily Brew, Color Gates Puzzle and its playable ad, internships and earlier projects.", "langLabel": "Language", "navWork": "Other work", "navContact": "Get in touch", "heroKicker": "Mobile apps & games · Antalya, Türkiye", "heroTitle": "I design and build mobile products, from first sketch to store listing.", "heroLead": "Two of them are below: a habit tracker that turns a daily routine into a pour-over ritual, and a timed color puzzle with 10,000 levels. For both I made the product decisions, the interface, the code and the store pages. Further down: two internships and other projects.", "dbCardSub": "Habit tracker · Expo, React Native", "cgCardSub": "Puzzle game · Next.js, Capacitor", "dbIconAlt": "Daily Brew app icon", "dbTitle": "Habits, brewed daily.", "dbLead": "Daily Brew treats every habit as a recipe. As you complete them through the day, the glass carafe on the home screen fills up. Finish the day and steam rises from the cup.", "lRole": "Role", "dbRole": "Product, UI and development", "lStack": "Stack", "lPlatform": "Platform", "dbPlatform": "iOS and Android, offline-first", "lLangs": "Languages", "dbLangs": "Turkish, English, German", "altDb1": "Daily Brew home screen in light theme: the carafe is 75% full, 3 of 4 recipes brewed", "altDb3": "Brew timer for the Quiet coffee recipe with 8:25 left", "altDb2": "Daily Brew home screen in dark theme", "dbPanelCap": "Home in light and dark themes, with the brew timer in the middle.", "altDb4": "Recipes list: Reading, Morning walk, Call the family, Quiet coffee and Coding session", "f1t": "Every habit is a recipe", "f1b": "A recipe has a name, a target and the days it repeats. One-tap habits, counters and timed brews all live in the same list.", "altDb5": "Tasting Report: a 341-day brew streak, a top score of 93% and a year of brews", "f2t": "Streaks that forgive", "f2b": "Each recipe keeps its own streak. Rest days don’t break it, and once a month a “wet filter” pass forgives a missed day. The report shows focus time by week and a whole year of brews.", "altDb6": "Taste today: body, acidity and balance ratings with a short note", "f3t": "A tasting note for the day", "f3b": "A short evening check-in borrowed from coffee cupping: body, acidity and balance, plus a line of notes.", "altDb7": "Share card showing a 341-day Daily Brew streak", "f4t": "Made to be shared", "f4b": "A story-ready card with your streak, copied in one tap and pasted straight into an Instagram story.", "altDb8": "Recent tastings list with body, acidity and balance ratings and a note for each day", "f5t": "Recent tastings", "f5b": "Past tasting notes stay in a list, day by day, like a small coffee journal.", "decKicker": "Product decisions", "d1t": "Ads stay out of the ritual", "d1b": "The app is free with AdMob banners, but only on the Report and Settings screens. The home screen and the timer never show an ad, and there are no full-screen ads.", "d2t": "No account needed", "d2b": "Everything works offline and records stay on the phone. The timer keeps running in the background and sends a notification when time is up.", "cgIconAlt": "Color Gates app icon", "cgTitle": "Slide every block out through its own color.", "cgLead": "A free, timed sliding-block puzzle. Each block can leave the board only through the gate of the same color, before the clock runs out. Shaped pieces, rails, chains and ropes make later levels harder.", "cgRole": "Game design, UI and development", "cgStack": "Next.js, Capacitor 8, Phaser 3", "lStarted": "Started", "cgStarted": "July 2026", "lRevenue": "Revenue", "cgRevenue": "AdMob rewarded ads only, started by the player", "c1a": "10,000", "c1b": "levels", "c2a": "135 cards", "c2b": "in 15 sets, autumn album", "c3a": "4 languages", "c3b": "Turkish, English, German, French", "c4a": "Offline", "c4b": "no login, progress stays on the device", "loopTitle": "The core loop", "altCg1": "Home screen with the Level 312 button, events and a Pink Block Hunt bar", "s1t": "Home", "s1b": "One big button to the next level, with live events around it.", "altCg2": "Level 113 board with a 0:50 timer and colored gates on the walls", "s2t": "The board", "s2b": "Each block leaves only through the gate of its own color, before the timer runs out.", "altCg3": "Level 124 board with chained and locked blocks", "s3t": "Later levels", "s3b": "Shaped pieces, chains and locks turn the same rule into real puzzles.", "altCg4": "Vacuum booster selected, with a hint to tap a piece", "s4t": "Boosters", "s4b": "Hammer, rocket, vacuum and extra time help when a level gets stuck.", "metaTitle": "Reasons to come back tomorrow", "altCg5": "Autumn Album with sets such as Forest Walk, Rainy City and Harvest Feast", "m1t": "Card album", "m1b": "A seasonal album to fill, set by set.", "altCg6": "Daily tasks notebook with five small goals", "m2t": "Daily tasks", "m2b": "Five small goals a day, with a countdown to the next set.", "altCg7": "Star Chest filling up, with rewards inside", "m3t": "Star chest", "m3b": "Earn a star every level; 20 stars open the chest.", "altCg8": "Treasure Turtle event collecting coins in its shell", "m4t": "Events", "m4b": "Timed events like Treasure Turtle add a second goal on top of levels.", "hoodTitle": "Under the hood", "u1t": "Levels are generated, then proven solvable", "u1b": "No level is stored. A seeded generator builds each one from its number, so level 57 is the same on every phone, and a solver checks it can be cleared before it is shown.", "u2t": "A playable ad from the same rules", "u2b": "The playable ad is built with Phaser 3 and imports the game’s own board and gate logic. It ships as one 0.8 MB HTML file with an MRAID-ready install button.", "u3t": "My own server", "u3b": "The leaderboard runs on a Linux server I set up: Caddy for HTTPS, Node under systemd, SQLite with Drizzle, token auth, rate limiting and nightly backups.", "u4t": "Through App Review", "u4b": "The first build was rejected over an iPadOS requirement; I fixed it and resubmitted. Social features that could count as dormant were removed to meet guideline 2.5.19.", "ctaTitle": "Try it in the browser", "ctaBody": "I also built an HTML5 playable-ad version of the game: one short level, ready for ad networks.", "ctaPlay": "Play the playable ad", "workKicker": "Other work", "workTitle": "Internships and earlier projects.", "workLead": "Before Color Gates I worked on web, backend and AI projects, including two internships and a TÜBİTAK-accepted thesis.", "expTitle": "Experience", "e1m": "July – August 2026 · Denizli", "e1t": "Software Intern, Pro Yıldız Yazılım", "e1b": "Built SürüTakip with scope and priorities set together with my supervisor. Also delivered client work: a Django corporate site run from an admin panel, an e-commerce site with cart and orders, and a marketplace prototype for auto-parts sellers.", "e2m": "August – September 2025", "e2t": "AI Intern, LLM team, NewMind AI", "e2b": "Helped benchmark dense, BM25 and hybrid retrieval for RAG search quality. Built a FastAPI tool that runs benchmark and load tests from a UI, and set up Prometheus and Grafana dashboards to find bottlenecks.", "projTitle": "Earlier projects", "p1t": "SürüTakip — GPS herd management", "p1b": "Web and mobile app for livestock owners and vets: live location, geofence alarms where the tracker phones the owner over GSM, and low-battery alerts. I also wrote the tracker firmware.", "p2t": "DisasterAI — disaster risk analysis", "p2b": "My B.Sc. thesis, accepted under TÜBİTAK 2209-A: earthquake, landslide and flood risk for a chosen building, with a map, an explanation of the score, a walking route to the nearest assembly area and a PDF report.", "p3t": "Baba Asistan — voice assistant", "p3b": "A Turkish voice assistant for my father’s Android phone: an offline “Hey Paşa” wake word, calling contacts by name and playing Spotify by voice.", "workNote": "The code of these projects is private. I’m happy to walk through any of them in an interview.", "footTitle": "Building a playable ad or a mobile game? Let’s talk.", "footCv": "Download CV (PDF)", "cvHref": "Ayse_Cetin_CV.pdf", "footLoc": "Antalya · Open to remote work"},tr:{"title": "Ayşe Çetin — Mobil uygulamalar ve oyunlar", "metaDesc": "Ayşe Çetin'in portfolyosu: Daily Brew, Color Gates Puzzle ve playable reklamı, stajlar ve önceki projeler.", "langLabel": "Dil", "navWork": "Diğer işler", "navContact": "İletişim", "heroKicker": "Mobil uygulamalar ve oyunlar · Antalya", "heroTitle": "Mobil ürünleri ilk eskizden mağaza sayfasına kadar tasarlıyor ve geliştiriyorum.", "heroLead": "Aşağıda bunlardan ikisi var: günlük rutini bir pour-over ritüeline çeviren bir alışkanlık takipçisi ve 10.000 level’lık, süreli bir renk bulmacası. İkisinde de ürün kararlarını, arayüzü, kodu ve mağaza sayfalarını ben hazırladım. Aşağıda iki staj ve diğer projelerim de var.", "dbCardSub": "Alışkanlık takipçisi · Expo, React Native", "cgCardSub": "Bulmaca oyunu · Next.js, Capacitor", "dbIconAlt": "Daily Brew uygulama ikonu", "dbTitle": "Alışkanlıklarını her gün demle.", "dbLead": "Daily Brew her alışkanlığı bir reçete gibi ele alıyor. Gün içinde tamamladıkça ana ekrandaki cam sürahi doluyor. Günü tamamladığında fincandan buhar yükseliyor.", "lRole": "Rol", "dbRole": "Ürün, arayüz ve geliştirme", "lStack": "Teknoloji", "lPlatform": "Platform", "dbPlatform": "iOS ve Android, çevrimdışı öncelikli", "lLangs": "Diller", "dbLangs": "Türkçe, İngilizce, Almanca", "altDb1": "Açık temada Daily Brew ana ekranı: sürahi yüzde 75 dolu, 4 reçetenin 3’ü demlendi", "altDb3": "Quiet coffee reçetesi için 8:25 kalmış demleme sayacı", "altDb2": "Koyu temada Daily Brew ana ekranı", "dbPanelCap": "Açık ve koyu temada ana ekran, ortada demleme sayacı.", "altDb4": "Reçete listesi: okuma, sabah yürüyüşü, aileyi arama, sakin kahve ve kodlama", "f1t": "Her alışkanlık bir reçete", "f1b": "Her reçetenin bir adı, hedefi ve tekrarlandığı günler var. Tek dokunuşluk alışkanlıklar, sayaçlar ve süreli demlemeler aynı listede duruyor.", "altDb5": "Tadım raporu: 341 günlük demleme serisi, yüzde 93 en iyi skor ve bir yıllık demlemeler", "f2t": "Affeden seriler", "f2b": "Her reçetenin kendi serisi var. Dinlenme günleri seriyi bozmuyor, ayda bir de “filtre ıslak kaldı” hakkı kaçırılan bir günü affediyor. Rapor, haftalık odak süresini ve bir yıllık demlemeleri gösteriyor.", "altDb6": "Günün tadımı: gövde, asidite ve denge puanları ile kısa bir not", "f3t": "Günün tadım notu", "f3b": "Kahve tadımından ödünç alınmış kısa bir akşam değerlendirmesi: gövde, asidite ve denge, bir de birkaç satır not.", "altDb7": "341 günlük Daily Brew serisini gösteren paylaşım kartı", "f4t": "Paylaşmak için tasarlandı", "f4b": "Serini gösteren, hikâyeye hazır bir kart. Tek dokunuşla kopyalanıp doğrudan Instagram hikâyesine yapıştırılıyor.", "altDb8": "Her gün için gövde, asidite, denge puanları ve not içeren son tadımlar listesi", "f5t": "Son tadımlar", "f5b": "Geçmiş tadım notları gün gün bir listede duruyor; küçük bir kahve günlüğü gibi.", "decKicker": "Ürün kararları", "d1t": "Reklam ritüele girmiyor", "d1b": "Uygulama ücretsiz ve AdMob banner’ları var, ama yalnızca Rapor ve Ayarlar ekranlarında. Ana ekranda ve sayaçta hiç reklam çıkmıyor, tam ekran reklam da yok.", "d2t": "Hesap gerekmiyor", "d2b": "Her şey çevrimdışı çalışıyor ve kayıtlar telefonda kalıyor. Sayaç arka planda akmaya devam ediyor ve süre dolunca bildirim gönderiyor.", "cgIconAlt": "Color Gates uygulama ikonu", "cgTitle": "Her bloğu kendi renginden dışarı kaydır.", "cgLead": "Ücretsiz, süreli bir blok kaydırma bulmacası. Her blok tahtadan yalnızca kendi rengindeki kapıdan ve süre dolmadan çıkabiliyor. Şekilli parçalar, raylar, zincirler ve ipler ilerleyen level’ları zorlaştırıyor.", "cgRole": "Oyun tasarımı, arayüz ve geliştirme", "cgStack": "Next.js, Capacitor 8, Phaser 3", "lStarted": "Başlangıç", "cgStarted": "Temmuz 2026", "lRevenue": "Gelir modeli", "cgRevenue": "Yalnızca oyuncunun başlattığı AdMob ödüllü reklamları", "c1a": "10.000", "c1b": "level", "c2a": "135 kart", "c2b": "15 sette, sonbahar albümü", "c3a": "4 dil", "c3b": "Türkçe, İngilizce, Almanca, Fransızca", "c4a": "Çevrimdışı", "c4b": "giriş yok, ilerleme cihazda kalıyor", "loopTitle": "Temel döngü", "altCg1": "Level 312 düğmesi, etkinlikler ve Pembe Blok Avı çubuğu olan ana ekran", "s1t": "Ana ekran", "s1b": "Bir sonraki level’a giden tek büyük düğme, etrafında canlı etkinlikler.", "altCg2": "0:50 sayacı ve duvarlarda renkli kapılar olan Level 113 tahtası", "s2t": "Tahta", "s2b": "Her blok süre dolmadan yalnızca kendi rengindeki kapıdan çıkabiliyor.", "altCg3": "Zincirli ve kilitli bloklar olan Level 124 tahtası", "s3t": "İleri level’lar", "s3b": "Şekilli parçalar, zincirler ve kilitler aynı kuralı gerçek bulmacalara çeviriyor.", "altCg4": "Süpürge güçlendiricisi seçili, bir parçaya dokunma ipucuyla", "s4t": "Güçlendiriciler", "s4b": "Çekiç, roket, süpürge ve ek süre, takılınan level’larda yardım ediyor.", "metaTitle": "Yarın geri gelmek için sebepler", "altCg5": "Orman Yürüyüşü, Yağmurlu Şehir ve Hasat Şöleni gibi setleri olan Sonbahar Albümü", "m1t": "Kart albümü", "m1b": "Set set doldurulan sezonluk bir albüm.", "altCg6": "Beş küçük hedefli günlük görev defteri", "m2t": "Günlük görevler", "m2b": "Günde beş küçük hedef ve bir sonraki sete geri sayım.", "altCg7": "Dolmakta olan, içinde ödüller bulunan Yıldız Sandığı", "m3t": "Yıldız sandığı", "m3b": "Her level bir yıldız kazandırıyor; 20 yıldız sandığı açıyor.", "altCg8": "Kabuğunda altın biriktiren Hazine Kaplumbağası etkinliği", "m4t": "Etkinlikler", "m4b": "Hazine Kaplumbağası gibi süreli etkinlikler level’ların üstüne ikinci bir hedef ekliyor.", "hoodTitle": "Perde arkası", "u1t": "Bölümler üretiliyor, sonra çözülebilirliği kanıtlanıyor", "u1b": "Hiçbir bölüm saklanmıyor. Tohumlu bir üretici her bölümü numarasından kuruyor; böylece 57. bölüm her telefonda aynı. Bir çözücü de bölüm gösterilmeden önce bitirilebilir olduğunu kontrol ediyor.", "u2t": "Aynı kurallardan bir playable ad", "u2b": "Playable ad Phaser 3 ile yazıldı ve oyunun kendi tahta ve kapı mantığını kullanıyor. MRAID uyumlu yükleme butonu olan tek bir 0,8 MB HTML dosyası.", "u3t": "Kendi sunucum", "u3b": "Sıralama, kendi kurduğum bir Linux sunucusunda çalışıyor: HTTPS için Caddy, systemd altında Node, Drizzle ile SQLite, token ile kimlik doğrulama, istek sınırı ve gece yedekleri.", "u4t": "App Review süreci", "u4b": "İlk derleme bir iPadOS zorunluluğu yüzünden reddedildi; düzeltip yeniden gönderdim. Uyuyan özellik sayılabilecek sosyal özellikleri de 2.5.19 kuralı için kaldırdım.", "ctaTitle": "Tarayıcıda dene", "ctaBody": "Oyunun HTML5 playable ad sürümünü de ben geliştirdim: reklam ağlarına hazır, kısa tek bir level.", "ctaPlay": "Playable ad’i oyna", "workKicker": "Diğer işler", "workTitle": "Stajlar ve önceki projeler.", "workLead": "Color Gates’ten önce web, arka uç ve yapay zekâ projelerinde çalıştım; aralarında iki staj ve TÜBİTAK kabulü alan bir tez var.", "expTitle": "Deneyim", "e1m": "Temmuz – Ağustos 2026 · Denizli", "e1t": "Yazılım Stajyeri, Pro Yıldız Yazılım", "e1b": "Kapsamını ve önceliklerini staj sorumlumla birlikte belirlediğimiz SürüTakip’i geliştirdim. Ayrıca müşteri işleri teslim ettim: admin panelinden yönetilen bir Django kurumsal sitesi, sepet ve sipariş akışı olan bir e-ticaret sitesi ve oto yedek parçacıları için bir pazaryeri prototipi.", "e2m": "Ağustos – Eylül 2025", "e2t": "Yapay Zekâ Stajyeri, LLM ekibi, NewMind AI", "e2b": "RAG arama kalitesi için dense, BM25 ve hibrit aramayı kıyaslayan çalışmalara katkı verdim. Kıyaslama ve yük testlerini arayüzden çalıştıran bir FastAPI aracı yazdım; darboğazları bulmak için Prometheus ve Grafana panoları kurdum.", "projTitle": "Önceki projeler", "p1t": "SürüTakip — GPS destekli sürü yönetimi", "p1b": "Hayvan sahipleri ve veterinerler için web ve mobil uygulama: canlı konum, bölge ihlalinde cihazın GSM üzerinden sahibini aradığı alarmlar ve düşük pil uyarıları. Takip cihazının yazılımını da ben yazdım.", "p2t": "DisasterAI — afet risk analizi", "p2b": "TÜBİTAK 2209-A kabulü alan lisans tezim: seçilen bir bina için deprem, heyelan ve sel riski; harita, skorun açıklaması, en yakın toplanma alanına yürüyüş rotası ve PDF rapor.", "p3t": "Baba Asistan — sesli asistan", "p3b": "Babamın Android telefonu için Türkçe sesli asistan: internetsiz çalışan “Hey Paşa” uyandırma kelimesi, kişileri adıyla arama ve sesle Spotify çalma.", "workNote": "Bu projelerin kodları gizli. Mülakatta herhangi birini memnuniyetle anlatırım.", "footTitle": "Playable ad ya da mobil oyun mu? Konuşalım.", "footCv": "CV’yi indir (PDF)", "cvHref": "Ayse_Cetin_CV_TR.pdf", "footLoc": "Antalya · Uzaktan çalışmaya açığım"}};
+function apply(l){var t=D[l];document.documentElement.lang=l;document.title=t.title;
+var m=document.querySelector('meta[name=description]');if(m)m.content=t.metaDesc;
+document.querySelectorAll('[data-i18n]').forEach(function(n){n.textContent=t[n.getAttribute('data-i18n')]});
+document.querySelectorAll('[data-i18n-alt]').forEach(function(n){n.alt=t[n.getAttribute('data-i18n-alt')]});
+document.querySelectorAll('[data-i18n-href]').forEach(function(n){n.href=t[n.getAttribute('data-i18n-href')]});
+document.querySelectorAll('[data-i18n-aria]').forEach(function(n){n.setAttribute('aria-label',t[n.getAttribute('data-i18n-aria')])});
+document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-lang')===l))});}
+var l='en';try{var s=localStorage.getItem('portfolio-lang');if(s==='en'||s==='tr')l=s;else if((navigator.language||'').toLowerCase().indexOf('tr')===0)l='tr';}catch(e){}
+if(l!=='en')apply(l);
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-lang');apply(v);try{localStorage.setItem('portfolio-lang',v)}catch(e){}})});})();</script>
 </body>
 </html>
